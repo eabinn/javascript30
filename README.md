@@ -31,3 +31,13 @@
 - sort는 callback fn을 인자로 받으며 이 fn은 두 개의 인자를 받는다. 이 두 인자로 sort를 해주면 된다. 만약 나이가 큰 사람부터 작은 사람으로 sort를 하고 싶으면 조건문에 a.age > b.age 해주면 된다.
 - reduce()는 array의 모든 single item에 대해서 어떤 작업을 하고 싶을 때 사용한다. 예를 들어 모든 아이템의 값을 더해 하나의 값을 리턴하고 싶다 든가 할 때 사용한다. reduce()의 callback fn은 첫 번째 인자로 어떤 작업한 결과를 넣고 싶은 변수, 이것이 return 하는 변수에 들어간다. 그리고 두 번째 이자가 array의 single item 들이다. 이 reduce는 두 번쨰 인자로 callback fn의 첫 번째 인자의 초기값을 넣어준다. 예를 들어 어떤 작업을 한 결과를 object에 넣고 싶으면 {}를 넣어주면 된다.
 - reduce를 한번도 써본 적이 없어서 제일 낯설었는데 가장 많이 사용할 것 같다.
+
+### Day5. Flex Panels Image Gallery
+
+- box-sizing: border-box 는 테두리를 기준으로 크기를 정한다는 말이다.
+- flex 속성은 flex container의 item 들에게 주며 flex: 1은 container의 모든 item들이 같은 크기의 넓이를 가진다는 말이다.
+- flex: 5 같이 flex 속성에 1이 아닌 값을 준 것은 flex: 1이 모든 flex item 들이 같은 크기의 영역을 차지하는 것에 반해 flex: 5는 현재 점유의 5배 크기를 가지겠다는 말이다.
+- transitionend 이벤트에서 e.propertyName을 콘솔 찍어보면 어떤 transition이 있는지 알려준다.
+- flex의 경우 e.propertyName 출력해보면 safari에서는 그냥 flex 인데 다른 익스플로러에서는 flex-grow다.
+- flex: 1 0 auto는 차례대로 flex-grow, flex-shrink, flex-basis다.
+- addEventListener에서 transitionend로 정말 이쁜 effect를 줄 수 있다. transitionend 사용하는게 event.propertyName을 콘솔 찍어서 보면 좀 더 쉽게 작업을 할 수 있을거다.
