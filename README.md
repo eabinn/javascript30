@@ -41,3 +41,12 @@
 - flex의 경우 e.propertyName 출력해보면 safari에서는 그냥 flex 인데 다른 익스플로러에서는 flex-grow다.
 - flex: 1 0 auto는 차례대로 flex-grow, flex-shrink, flex-basis다.
 - addEventListener에서 transitionend로 정말 이쁜 effect를 줄 수 있다. transitionend 사용하는게 event.propertyName을 콘솔 찍어서 보면 좀 더 쉽게 작업을 할 수 있을거다.
+
+### Day6. Ajax Type Ahead
+
+- fetch는 promise를 return 한다.
+- ... => ES6에 새로 나온 문법 중 하나인 spread다. 복사한다.
+- regex는 RegExp 생성자로 만들며 첫 번쨰 인자는 string, 두 번째 인자는 플래그로 플래그 중 g는 whole string, i는 lower, upper 다 찾겠다는 말이다.
+- array에, 예를 들어 datas 라는 array가 있다고 하자. 그러면 data.join('') 하게 되면 multiple array item들을 string으로 바꿔준다.
+- array의 map은 모든 아이템을 돌면서 어떤 작업을 한 뒤 그 결과의 배열을 리턴한다.
+- array의 filter은 해당 조건에 맞는 아이템들의 리스트를 리턴한다.
