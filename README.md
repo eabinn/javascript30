@@ -50,3 +50,10 @@
 - array에, 예를 들어 datas 라는 array가 있다고 하자. 그러면 data.join('') 하게 되면 multiple array item들을 string으로 바꿔준다.
 - array의 map은 모든 아이템을 돌면서 어떤 작업을 한 뒤 그 결과의 배열을 리턴한다.
 - array의 filter은 해당 조건에 맞는 아이템들의 리스트를 리턴한다.
+
+### Day7. Array Cardio Day2
+
+- Array.prototype.some()은 at least 아이템들이 callBack fn에 해당하는지에 대한 boolean 값을 return 한다.
+- Array.prototype.every()는 array의 모든 single item들이 만족하냐 안 하냐에 대한 boolean 값을 return 한다.
+- Array에서 index를 가지고 해당 아이템을 Array에서 지울 때는 splice 함수를 사용할 수도 있다.
+- 또한 지울 때 redux에서 상태 관리를 하기 위해 자주 사용하는 방법인데 새 array를 만드는데 지우는 index 앞뒤로 복사해서 새 array를 만든 후 return 하는 방법이 있다.
