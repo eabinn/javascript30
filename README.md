@@ -57,3 +57,15 @@
 - Array.prototype.every()는 array의 모든 single item들이 만족하냐 안 하냐에 대한 boolean 값을 return 한다.
 - Array에서 index를 가지고 해당 아이템을 Array에서 지울 때는 splice 함수를 사용할 수도 있다.
 - 또한 지울 때 redux에서 상태 관리를 하기 위해 자주 사용하는 방법인데 새 array를 만드는데 지우는 index 앞뒤로 복사해서 새 array를 만든 후 return 하는 방법이 있다.
+
+### Day8. Fun with HTML5 Canvas
+
+- 결국은 pixel에 그리는 것이고 그러기 위해서 context라는 것을 사용한다. 일단 context 지금은 2d를 사용하는데 3d도 사용할 수 있다.
+- 따라서 getContext 매서드에 2d를 넣어 context를 가져오자.
+- context의 lineJoin 과 lineCap 속성은 라인이 끝나거나 서로 만날 때 그 shape을 어떻게 할 것인가에 대한 속성을 정한다.
+- isDrawing은 그리냐 안 그리냐를 정하는 flag 인데 클릭한 상태에서만 그리기 위해서다.
+- 그리는 것은 모두 context로 한다. 일단 beginPath()로 그린다는 것을 선언하고 moveTo()로 시작점을, 그리고 lineTo()로 종료점을 명시한다. 그리고 마지막으로 그리는 것은 stroke()로 한다.
+- destructuring array라는 es6의 문법을 사용해서 코드를 간결하게 할 수 있다.
+- ttps://mothereffinghsl.com/
+- hsl이 뭐냐면 프로그램적으로 레인보우의 부분을 정할 수 있는 것이다. h는 red to red의 레인보우의 부분이고 s는 saturation은 brightness이고 l은 lighteness을 말한다.
+- Canvas의 context의 globalCompositeOperation 값은 어떻게 blend 할 지를 정한다. multiply가 있고, ... (https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
