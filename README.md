@@ -75,3 +75,5 @@
 - 자바스크립트로 엘리먼트의 속성을 조작할때가 있을 것이다. 근데 어떻게 되는지 잘 모르겠다. 그러면 일단 inspect에서 element를 선택하고 break on에서 attribute modification을 누르면 breakpoint가 정해진다. 그리고 페이지로 가서 해당 element를 누르면 debug 모드로 확인을 할 수 있게 된다.
 - console 메세지에 스타일을 주고 싶다면 메시지 앞에 %c를 적고 두 번째 파라미터로 스타일 스트링을 주면 된다.
 - console 찍을 것들을 grouping 하거나 뭔가 block이 필요한 것들은 같은 문자열 값을 주는 것으로 그룹을 정하게 된다.
+
+# Day10. Hold Shift and Check Checkboxes
