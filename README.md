@@ -77,3 +77,7 @@
 - console 찍을 것들을 grouping 하거나 뭔가 block이 필요한 것들은 같은 문자열 값을 주는 것으로 그룹을 정하게 된다.
 
 # Day10. Hold Shift and Check Checkboxes
+
+- 이건 좀 많이 이해가 안 됐는데 여러번 보니깐 이해가 됐다.
+- 약간 this를 이전까지는 잘 몰랐는데 잘 알게 된 것 같다.
+- array의 forEach 메서드를 쓸 때 this는 loop에서의 현재 item을 말한다.
