@@ -81,3 +81,12 @@
 - 이건 좀 많이 이해가 안 됐는데 여러번 보니깐 이해가 됐다.
 - 약간 this를 이전까지는 잘 몰랐는데 잘 알게 된 것 같다.
 - array의 forEach 메서드를 쓸 때 this는 loop에서의 현재 item을 말한다.
+
+# Day11. Custom Video Player
+
+- querySelect 할 때 attribute로도 할 수 있다. 대신 []로 감싼다.
+- data attribute 또 썼다.
+- this를 어떻게 사용하냐가 중요하고 또한 attribute 들을 어떻게 가져와서 쓰느냐가 실력의 판걸음인것 같다.
+- video 엘리먼트에는 timeupdate라는 이벤트가 있다.
+- offsetX, offsetY는 그 엘리먼트에서의 클릭한 위치를 말한다.
+- offsetWidth는 그 엘리먼트의 전체 가로의 길이를 말한다.
