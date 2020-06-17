@@ -90,3 +90,8 @@
 - video 엘리먼트에는 timeupdate라는 이벤트가 있다.
 - offsetX, offsetY는 그 엘리먼트에서의 클릭한 위치를 말한다.
 - offsetWidth는 그 엘리먼트의 전체 가로의 길이를 말한다.
+
+# Day12. Key Sequence Detection (KONAMI CODE)
+
+- 이 12일의 work는 좀 ... 이상하네. 약간 쉬어가는 느낌으로 하는건가?
+- 그래도 여기서 배운 건 cornify. 귀엽다.
