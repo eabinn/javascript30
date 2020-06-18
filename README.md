@@ -95,3 +95,9 @@
 
 - 이 12일의 work는 좀 ... 이상하네. 약간 쉬어가는 느낌으로 하는건가?
 - 그래도 여기서 배운 건 cornify. 귀엽다.
+
+# Day13. Slide In on Scroll
+
+- 스크롤 한 길이를 알수 있는 것은 window.scrollY다.
+- offsetTop은 해당 엘리먼트가 window의 top에서 얼만큼 떨어졌는지를 말한다.
+-
