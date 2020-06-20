@@ -100,4 +100,19 @@
 
 - 스크롤 한 길이를 알수 있는 것은 window.scrollY다.
 - offsetTop은 해당 엘리먼트가 window의 top에서 얼만큼 떨어졌는지를 말한다.
--
+
+# Day14. Object and Arrays - Reference VS Copy
+
+- 만약 players라는 배열이 있다. 그리고 이 players 라는 배열을 team이라는 새로운 변수에 넣는다(const team = players). 그리고 만약 team에서의 어느 한 아이템의 값을 바꾼다. 그러면 players에는 값의 변화가 있을까 없을까? 원본인 players에서도 변화가 있다. const team = players에서 의미하는 것은 team은 original array인 players의 reference다. 그래서 team에서 바꾸면 players에서의 값도 변한다.
+- 그럼 reference가 아닌 단순히 배열의 copy본을 만들고 싶으면 어떻게 해야할까? 여러 개의 방법이 있는데 먼저 slice를 사용해보자. 원래 slice경우 짜르는 용도로 사용했는데 slice 자체가 array를 slice 해서 새로운 array를 return하기 떄문에 이 slice를 사용해서 기존 배열의 copy본을 만들 수 있다.
+- 다른 방법은 [].concat()을 사용하는 것이다. concat은 인자로 들어오는 배열을 복사해준다.
+- 세번째 방법은 ES6에 나온 spread 문법(...)을 사용하는 것이다. 이 spread는 [] 이 안의 배열의 모든 아이템을 iterate 하면서 이 배열을 감싸고 있는 containng, 여기서는 [] 안에 넣어준다.
+- 네번째 방법은 Array.from()을 사용하는 것이다.
+- 객체도 마찬가지다. 만약 새 변수를 만들고 거따가 그냥 original object를 넣어주면 reference를 넣어준 것이기 때문에 그 후 새 변수의 값을 수정하면 original object에 영향을 끼치게 된다.
+- 그럼 어떻게 하면 될까?
+- Object.assign()을 사용해보자. assign의 첫 번쨰 인자로는 빈 object, 두 번째 인자로 카피할 object를 넣어준다. 그럼 빈 object에 person이 copy 되고 세 번째 인자로 전달해주는 값들로 update된 새 객체가 리턴된다.
+- 다른 방법은 es6의 spread를 사용하는 것이다. 이것도 target을 복사해서 containing 하는 것에 복사해주는 것이다. 여기서 containing은 {}다. 근데 주의할 것은 es6의 spread는 shallow, 즉 얕다 는 것이다.
+- React를 공부하면서 Redux 같이 진행할때 spread 문법을 많이 사용했는데 이때 공부하면서 계속 들었던게 이 spread는 1 level만 복사하기 떄문에 2 level, 3 level도 다 들어가서 spread를 해줘야 된다고 배웠었다.
+- 그 때는 level을 들어가면서 복사를 해야한다고 해서 들어가지 않으면 복사가 안되는 줄 알았는데 그게 아니었다.
+- 얕다는 것은 그 단계까지는 완전히 새로운 배열로 복사한다는 것인데 그 아래는 그대로 reference를 참조한다는 뜻이었다. 따라서 완전히 복사하기 위해 그 아래 레벌로 들어가는다는 것은 reference를 참조하지 않기 위한 새 배열을 만들기 위함이다.
+- 홀리... 이 14일이 스크롤 다음으로 가장 도움이 되는 교육이었다. 약간 확실한 생각으로 가지고 있었던 것이 옳지 않다는 것을 알게 된 수업이었다.
