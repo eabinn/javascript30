@@ -116,3 +116,18 @@
 - 그 때는 level을 들어가면서 복사를 해야한다고 해서 들어가지 않으면 복사가 안되는 줄 알았는데 그게 아니었다.
 - 얕다는 것은 그 단계까지는 완전히 새로운 배열로 복사한다는 것인데 그 아래는 그대로 reference를 참조한다는 뜻이었다. 따라서 완전히 복사하기 위해 그 아래 레벌로 들어가는다는 것은 reference를 참조하지 않기 위한 새 배열을 만들기 위함이다.
 - 홀리... 이 14일이 스크롤 다음으로 가장 도움이 되는 교육이었다. 약간 확실한 생각으로 가지고 있었던 것이 옳지 않다는 것을 알게 된 수업이었다.
+
+# Day15. LocalStorage and Event Delegation
+
+- form에서 submit 이벤트를 발생시킨다. 근데 이 이벤트가 발생하면 page reloading을 한다. 근데 그걸 원치 않는다면 e.preventDefault()를 해주면 된다.
+- this를 잘 쓰면 진짜 좋다. 그냥 이제 왠만해선 this를 쓰는 습관을 가지자.
+- 그리고 querySelector 할 때 tagname, id, class 뿐만 아니라 attribute로 접근해보는 것도 항상 행각하자.
+- key가 value를 담고있는 변수의 name이 값으면 ES6 문법으로 하나만 써도 된다.
+- 그리고 form에서 submit 하고나서 나는 주로 value 값을 '' 해서 reset 시켜줬는데 그냥 form에 있는 reset() 사용하면 된다.
+- label의 for attribute는 연결할 input의 id와 똑같아야 한다.
+- localStorage는 key, value 저장소인데 string만 받아들인다. 그래서 만약 그냥 object를 넣는다면 Object라는 string으로 저장해준다. 그래서 localStorage에 값이 저장할 때는 string으로 바꿔서 넣어줘야 한다.
+- Event Delegation 이라는 것을 왜 사용해야 하냐. 일단 웹에서 뭔가 리스트에서 새로운 아이템을 추가한다고 했을 때 그 각 아이템에 어떤 이벤트를 넣는다고 해보자. 근데 페이지가 로딩될 때 기존에 있던 리스트의 아이템들에 addEventListerer을 해서 이벤트를 준다고 하자. 근데 그러면 뒤에 생긴 아이템들은 페이지 로딩 후에 생긴 아이템들이기 때문에 이벤트가 달리지 않는다. 그래서 여기서 Event Delegation을 해주는 것이다.
+- 믿을만한 parent element에 이벤트를 준다. 그럼 그 parent의 하위 element에 준 event가 delegation 된다. 이렇게 event delegation을 씀으로써 후에 생긴 하위 element에도 event를 줄 수 있다.
+- 이때 주의해야 할 것은 어떤 element가 그 event를 실행해야 하는지 그게 개발할 때 정해줄텐데 모든 하위 element가 이벤트를 받음으로써 한번 꼭 필요한 element를 선택하는 필터를 걸어줘야 한다.
+- 또 data attribute 나왔다. element 만들 때 data- 로 attribute 만들면 element의 dataset 객체에 - 다음의 name으로 key value가 생성된다. 그걸 유용하게 사용하기만 하면 된다.
+- jquery의 is 메서드와 vanillajs의 matches 메서드는 같다.
