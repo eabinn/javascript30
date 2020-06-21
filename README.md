@@ -88,7 +88,7 @@
 - data attribute 또 썼다.
 - this를 어떻게 사용하냐가 중요하고 또한 attribute 들을 어떻게 가져와서 쓰느냐가 실력의 판걸음인것 같다.
 - video 엘리먼트에는 timeupdate라는 이벤트가 있다.
-- offsetX, offsetY는 그 엘리먼트에서의 클릭한 위치를 말한다.
+- offsetX, offsetY는 그 엘리먼트에서의 커서의 위치를 말한다.
 - offsetWidth는 그 엘리먼트의 전체 가로의 길이를 말한다.
 
 # Day12. Key Sequence Detection (KONAMI CODE)
@@ -131,3 +131,14 @@
 - 이때 주의해야 할 것은 어떤 element가 그 event를 실행해야 하는지 그게 개발할 때 정해줄텐데 모든 하위 element가 이벤트를 받음으로써 한번 꼭 필요한 element를 선택하는 필터를 걸어줘야 한다.
 - 또 data attribute 나왔다. element 만들 때 data- 로 attribute 만들면 element의 dataset 객체에 - 다음의 name으로 key value가 생성된다. 그걸 유용하게 사용하기만 하면 된다.
 - jquery의 is 메서드와 vanillajs의 matches 메서드는 같다.
+
+# Day16. CSS Text Shadow Mouse Move Effect -
+
+- offsetWidth와 offsetHeight로 해당 element의 가로 길이와 세로 길이를 알 수 있다.
+- offsetX와 offsetY는 해당 이벤트에서의 커서의 위치를 말한다.
+- wow... es6's destructuring is really awesome...
+- 현재 hero에 mousemove event를 줬는데 hero는 children을 가지고 있다. 따라서 offsetX와 offsetY는 현재 event가 발생하고 있는 위치의 offset을 반환하는데 children element 안에서 발생하면 해당 element 기준에서의 offset을 반환한다.
+- 그러므로 event를 줄 때는 children에게 delegation이 될 것을 생각하면서 trigger function에 어떤 element에서 이 event가 실행되기를 원하는지 filter를 해줘야 한다.
+- 아... 근데 여기서 this의 중요성이 또 나오네. element에 event를 add 할 때 function에 전달받는 this는 이 element 뿐이다. 이 element의 children은 this의 대상이 될 수 없다. 이걸로 filter를 쉽게 걸 수 있따.
+- offsetX, offsetY 뿐만 아니라 offsetTop, offsetLeft 등도 있다.
+- 재밌었다. textShadow comma로 여러 개 줄 수 있다는 것도 알게 됐다.
