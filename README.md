@@ -145,6 +145,6 @@
 
 # Day17. Sort Without Articles
 
-- array의 sorted 메서드는 두 인자를 받으며 이 두 인자로 비교해주고 싶은 것의 if문에 return True를, 그렇지 않은 것에는 return False를 해주면 된다. 만약 내림차순으로 하고 싶으면 a > b ? 1: -1 하면 된다.
+- array의 sorted 메서드는 두 인자를 받으며 이 두 인자로 비교해주고 싶은 것의 if문에 return True를, 그렇지 않은 것에는 return False를 해주면 된다. 만약 오름차순으로 하고 싶으면 a > b ? 1: -1 하면 된다.
 - regex에 익숙해져야 한다. ^은 가장 앞을 의미한다.
 - innerHTML에 string이 아닌 것들을 넣으면, 예를 들어 array, default로 toString()을 해주기 때문에 만약 array를 넣는다면 넣기 전에 join('') 해서 아이템들을 모두 하나의 string으로 만들어주자.
