@@ -148,3 +148,11 @@
 - array의 sorted 메서드는 두 인자를 받으며 이 두 인자로 비교해주고 싶은 것의 if문에 return True를, 그렇지 않은 것에는 return False를 해주면 된다. 만약 오름차순으로 하고 싶으면 a > b ? 1: -1 하면 된다.
 - regex에 익숙해져야 한다. ^은 가장 앞을 의미한다.
 - innerHTML에 string이 아닌 것들을 넣으면, 예를 들어 array, default로 toString()을 해주기 때문에 만약 array를 넣는다면 넣기 전에 join('') 해서 아이템들을 모두 하나의 string으로 만들어주자.
+
+# Day18. Tally String Times with Reduce
+
+- querySelectorAll 하게되면 NodeList type으로 반환한다. 이는 Array가 아니다. 따라서 proto를 보면 알겠지만 map이 없다. 따라서 map을 쓰고 싶으면 Array로 변환해줘야 하는데 ... 를 사용해서 [] 와 같이 빈 배열에 넣거나 아니면 Array.from()을 사용한다.
+- split을 한 후 이것을 배열에 destructuring(es6 문법) 하여 저장한다고 해보자. 그럼 무조건 string으로 반환하기 때문에 만약 숫자를 계산해야 하면 숫자로 바꿔줘야 한다.
+- map(str => parseFloat(str))도 간단하게 쓴건데 더 간단하게 쓰고 싶다 싶으면 map(parseFloat) 그냥 하면 된다.
+- reduce는 두 개의 인자를 받는다. 첫 번째가 어떤 작업을 마친 후 리턴되는 것이고 두 번째가 array의 각 아이템이다.
+- mod는 나머지를 반환한다. 초에서 시간을 의미하는 3600을 mod하면 나머지가 남은 초다. / 로, 나누기로 해서 나온 값에 3600을 곱해서 다시 전체 초에서 빼도 되는데 그냥 mod 하면 된다. 항상 너무 일차원적으로 생각하는 것이 나의 문제다.
