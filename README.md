@@ -156,3 +156,16 @@
 - map(str => parseFloat(str))도 간단하게 쓴건데 더 간단하게 쓰고 싶다 싶으면 map(parseFloat) 그냥 하면 된다.
 - reduce는 두 개의 인자를 받는다. 첫 번째가 어떤 작업을 마친 후 리턴되는 것이고 두 번째가 array의 각 아이템이다.
 - mod는 나머지를 반환한다. 초에서 시간을 의미하는 3600을 mod하면 나머지가 남은 초다. / 로, 나누기로 해서 나온 값에 3600을 곱해서 다시 전체 초에서 빼도 되는데 그냥 mod 하면 된다. 항상 너무 일차원적으로 생각하는 것이 나의 문제다.
+
+# Day19. Webcam Fun
+
+- window.navigator은 Navigator object의 reference를 반환한다. 이 reference는 application에 대한 method와 property들을 가지고 있다.
+- video element의 src에 navigator.mediaDivices.getUserMedia에서 받아온 mediaStream object를 넣어주자.
+- video의 videoWidth 와 videoHeight은 webcam에서 들어오는 video의 사이즈다. 이 크기를 canvas의 width와 height에 동일하게 만들자.
+- video의 play 메서드를 실행하면 'canplay' event를 emit 한다.
+- canvas element의 toDataURL 메서드로 현재 canvas에 그려져있는 데이터를 가져올 수 있다.
+- link element의 download attribute로 해당 link 클릭시 download 할 수 있다.
+- pixel 정보를 가져와서 data를 보면 엄청나게 긴 배열이 들어있는데 이게 pixel의 정보다. r, g, b, a 순서로 반복되며 마지막 a, alpha는 transparent를 의미한다.
+- 오늘차는 어려운게 아니었다. 다만 진짜 처음 해보는 것이었다. 이런 건 자주 사용해서 익숙해지는 수 밖에 없다. element에 어떤 method가 있고 어떤 property가 있는지, 또 navigator 같은 것들의 활용은 찾아봐야 알 수 있다. 재미있으니깐 가끔씩 심심할때 해보자.
+- browser-sync로 localhost에 서버를 실행할 수 있다. hot reloading을 해준다.
+- 나중에 놀 때 canvas의 context의 globalAlpha property도 한번 다뤄보자.
