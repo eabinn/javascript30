@@ -1,0 +1,15 @@
+{
+  "name": "day19_webcamfun",
+  "version": "1.0.0",
+  "description": "Day 19 Webcam Fun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server --files \"*.css, *.html, *.js\""
+  },
+  "author": "inbaeyoon",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}
