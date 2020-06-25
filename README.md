@@ -169,3 +169,9 @@
 - 오늘차는 어려운게 아니었다. 다만 진짜 처음 해보는 것이었다. 이런 건 자주 사용해서 익숙해지는 수 밖에 없다. element에 어떤 method가 있고 어떤 property가 있는지, 또 navigator 같은 것들의 활용은 찾아봐야 알 수 있다. 재미있으니깐 가끔씩 심심할때 해보자.
 - browser-sync로 localhost에 서버를 실행할 수 있다. hot reloading을 해준다.
 - 나중에 놀 때 canvas의 context의 globalAlpha property도 한번 다뤄보자.
+
+# Day20. Native Speech Recognition
+
+- speechRecognition은 window안에 있는 global variable이다.
+- SpeeechRecognition의 interimResults 를 true로 set 해줘서 잠시 멈춰도 안 끝난다.
+- Let's have some rest. Too tired.
