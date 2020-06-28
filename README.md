@@ -180,3 +180,9 @@
 
 - chrome에서 navigator로는 heading(north를 향하는) 이랑 speed를 없을 순 없다. 대신 safari로 테스트 하면 된다.
 - navigator 객체는 현재 사용하고 있는 웹브라우저에 대한 정보를 제공해주는 객체다. 브라우저의 종류에 따라 자바스크립트에서 다르게 사용하는 부분들을 보완하기 위해 주로 웹브라우저 종류나 버전을 파악하는데 사용한다.
+
+# Day22. Follow Along Link Highlighter
+
+- html element에는 getBoundingClientRect 라는 메서드가 있는데 이 메서드로 현재 element의 offset과 해당 element의 width, height 같은 정보를 얻을 수 있다.
+- 위치를 이동시킬 때 position을 absolute로 하고 top, bottom, left, right 값을 줄 수도 있지만 translate를 사용해서 이동시킬 수도 있다.
+- 또한 getBoundingClientRect를 사용해서 element의 offset을 가져올 때는 현재 스크롤 위치에 따른 값이다. 그래서 scroll 할 때마다 scrollY 또는 scrollX 값을 더해줘야 현재 scroll된 위치에서의 올바른 offset을 얻을 수 있다.
