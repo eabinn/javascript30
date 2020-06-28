@@ -175,3 +175,8 @@
 - speechRecognition은 window안에 있는 global variable이다.
 - SpeeechRecognition의 interimResults 를 true로 set 해줘서 잠시 멈춰도 안 끝난다.
 - Let's have some rest. Too tired.
+
+# Day21. Geolocation based Speedometer and Compass
+
+- chrome에서 navigator로는 heading(north를 향하는) 이랑 speed를 없을 순 없다. 대신 safari로 테스트 하면 된다.
+- navigator 객체는 현재 사용하고 있는 웹브라우저에 대한 정보를 제공해주는 객체다. 브라우저의 종류에 따라 자바스크립트에서 다르게 사용하는 부분들을 보완하기 위해 주로 웹브라우저 종류나 버전을 파악하는데 사용한다.
