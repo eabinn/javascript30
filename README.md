@@ -186,3 +186,12 @@
 - html element에는 getBoundingClientRect 라는 메서드가 있는데 이 메서드로 현재 element의 offset과 해당 element의 width, height 같은 정보를 얻을 수 있다.
 - 위치를 이동시킬 때 position을 absolute로 하고 top, bottom, left, right 값을 줄 수도 있지만 translate를 사용해서 이동시킬 수도 있다.
 - 또한 getBoundingClientRect를 사용해서 element의 offset을 가져올 때는 현재 스크롤 위치에 따른 값이다. 그래서 scroll 할 때마다 scrollY 또는 scrollX 값을 더해줘야 현재 scroll된 위치에서의 올바른 offset을 얻을 수 있다.
+
+# Day23. Speech Synthesis
+
+- https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance
+- js에는 speechSynthesis라는 global variable이 있고 utternance와 함께 사용한다. 하지만 speak를 하기 위해서는 voice가 필요하다.
+- js가 실행되면 speechSynthesis에 등록한 voicechanged라는 event가 fire되고 일단 이것의 getVoices라는 메서드를 실행해서 어떤 voice가 있는지 보자.
+- addEventListener 할 때 callback function에 function의 reference를 넘기지 않고 parameter를 넣어서 주면, 예를 들어 현재 toggle이라는 함수가 있는데 toggle 이렇게 넘기지 않고 toggle(false) 와 같이 값을 값이 주면서 event를 등록하면 page를 load 하면서 실행한다.
+- 방법이 여럿 있는데 일단 bind 하는 방법이 있다. bind해서 context와 parameter를 넘겨준다.
+- 또는 es6에 나온 arrow function을 사용하자.
