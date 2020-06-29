@@ -195,3 +195,12 @@
 - addEventListener 할 때 callback function에 function의 reference를 넘기지 않고 parameter를 넣어서 주면, 예를 들어 현재 toggle이라는 함수가 있는데 toggle 이렇게 넘기지 않고 toggle(false) 와 같이 값을 값이 주면서 event를 등록하면 page를 load 하면서 실행한다.
 - 방법이 여럿 있는데 일단 bind 하는 방법이 있다. bind해서 context와 parameter를 넘겨준다.
 - 또는 es6에 나온 arrow function을 사용하자.
+
+# Day24. Sticky Nav
+
+- box-sizing: border-box는 width와 height에 border가 포함된다.
+- element가 fixed가 되면 더 이상 relative된 space를 가지지 않는다. 자연스럽게 하기 위해서는 차지하고 있었던 space만큼 따로 padding으로 주던가 margin으로 주던가 해서 여백을 채워야 한다.
+- element의 offsetHeight는 element의 현재 높이를 가져온다.
+- width를 auto로 주면 animation을 줄 수가 없다.
+- min-과 max-를 잘쓰면 더 괜찮은 모습을 만들 수 있다. 연습하자.
+- 예전에 자식선택자, 자손선택자에 대해서 헷갈려서 한번 공부한 적이 있었는데 그때 공부해서 다행이다.
