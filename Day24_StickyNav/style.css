@@ -100,3 +100,9 @@ nav a {
   transition: all 0.2s;
   text-transform: uppercase;
 }
+
+button {
+  background-color: #bada55;
+  font-weight: bold;
+  text-align: center;
+}
