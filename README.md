@@ -204,3 +204,16 @@
 - width를 auto로 주면 animation을 줄 수가 없다.
 - min-과 max-를 잘쓰면 더 괜찮은 모습을 만들 수 있다. 연습하자.
 - 예전에 자식선택자, 자손선택자에 대해서 헷갈려서 한번 공부한 적이 있었는데 그때 공부해서 다행이다.
+
+# Day25. Event Capture, Propagation, Bubbling and Once
+
+- Event Bubbling은 event가 등록된 elements들에 대해서 nesting 되어 있으면 상위 element들도 같이 호출한다. 예를 들어 div들이 여러 개 중첩되어 있고 모든 div 들을 가져와서 click 이벤트를 달아줬을때 nesting된 모든 element 들에 대해서 event가 call 된다. 중요한 점은 해당 element에 해당 event가 등록되어 있냐 아니냐다. body안에 여러 div들이 서로 nesting 되어 있는데 div들에 click 이벤트를 줬다고 해보자. 근데 그 div는 body안에 있다. 근데 body에 그 이벤트가 등록되어 있지 않으면 body까지 그 이벤트가 bubbling 되지 않는다.
+- event bubbling을 할 때 가장 먼저 capture을 하는데 top => bottom이다. 그리고 해당 element에 도착하면 그 때부터 bottom => top 한다. 즉, bubble up 한다.
+- 근데 만약 이벤트 달 때에 third parameter로 {capture: true}를 주면 bubble down 한다. 즉, top => down 으로 capture 하면서 이벤트를 실행하는 것이다.
+- 이벤트 달 때 capture의 default value는 false다.
+- 근데 만약 event가 bubbling 되길 원치 않는다 그러면 이벤트 callback fn에 e.stopPropagation() 해주면 된다.
+- 근데 만약 capture: true 하고 e.stopPropagation() 한다? 그러면 nesting의 가장 최외곽에서 의 event만 호출되고 끝난다.
+- 또한 addEventListener의 third parameter로 capture 뿐만 아니라 once: true와 같은 값을 줄 수 있는데 이 경우 해당 click된 element에서 event를 실행하고 해당 event를 unbind 한다. unbind 한다는 의미는 이 이벤트를 remove한다는 뜻이다. 그럼 bubbling되지 않기 때문에 e.stopPropagation()과 똑같이 작동하게 된다.
+- once: true를 준다는 것은 그니깐 해당 event를 지운다는 것이다. 그니깐 예를 들어 어떤 button을 만들고 해당 butten에 click 이벤트를 줬다고 해보자. 그럼 click 할 때마다 callback fn이 실행될 것이다. 근데 third parameter로 once: true를 줬다? 그러면 처음 한번 시작하고 해당 event는 지워졌기 때문에 이벤트가 한번만 실행되고 만다.
+- 공부를 하면서 이걸 어따가 써먹을까 생각한다. 충분히 사용할 가능성이 많은 부분이라 기억한다.
+- 마지막으로 버튼 만들고 이벤트 once 주는거 해보면서 다시 한번 봐봤는데 생각보다 헷갈린다. 그냥 해당 이벤트 클릭된거 필터링해서 하는게 더 나은 선택일 수도 있을 것 같다고 생각한다.
