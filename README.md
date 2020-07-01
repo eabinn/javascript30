@@ -217,3 +217,12 @@
 - once: true를 준다는 것은 그니깐 해당 event를 지운다는 것이다. 그니깐 예를 들어 어떤 button을 만들고 해당 butten에 click 이벤트를 줬다고 해보자. 그럼 click 할 때마다 callback fn이 실행될 것이다. 근데 third parameter로 once: true를 줬다? 그러면 처음 한번 시작하고 해당 event는 지워졌기 때문에 이벤트가 한번만 실행되고 만다.
 - 공부를 하면서 이걸 어따가 써먹을까 생각한다. 충분히 사용할 가능성이 많은 부분이라 기억한다.
 - 마지막으로 버튼 만들고 이벤트 once 주는거 해보면서 다시 한번 봐봤는데 생각보다 헷갈린다. 그냥 해당 이벤트 클릭된거 필터링해서 하는게 더 나은 선택일 수도 있을 것 같다고 생각한다.
+
+# Day26. Stripe Follow Along Nav
+
+- 각 ul에서 li로 세부를 감싼 이유는 여러 개의 a 사이에 공백에 커서가 있을 경우 dropbox가 사라지는 것을 방지하기 위해서다. li에 hover를 주면 된다.
+- querySelectorAll은 NodeList를 반환하고 querySelector은 element를 반환한다.
+- event callback fn에서 this는 전달받은 element다. 근데 그 안에서 arrow function 말고 기본 function을 정의할 때 이 때의 this는 실행 컨텍스트가 아닌 window다. this는 기본적으로 window다. 근데 arrow function으로 함수를 만들면 상위 스코프의 this를 가져오기 때문에 this가 실행 컨텍스트가 된다.
+- display: none => block, opacity: 0 => 1은 한번에 같이 줄 수 없다. 따라서 step을 만들자.
+- 지금 150ms 후에 trigger-enter-active를 추가하게 했다. 근데 150ms 전에 hover off를 할 수도 있다. 이 경우 hover off 했는데 그 후에 trigger-enter-active가 추가될 수 있으니 filter를 걸자.
+- 오늘 내용은 많이 알찼다. 지금까지 html, css 작성할 때 약간 블럭을 쌓듯이 좀 딱딱하게 개발하는 면이 없지 않아 있었는데 js를 함께 쓰면서 좀 유연한 방식으로 작성을 해야겠다는 생각을 했다.
