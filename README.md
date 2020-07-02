@@ -226,3 +226,10 @@
 - display: none => block, opacity: 0 => 1은 한번에 같이 줄 수 없다. 따라서 step을 만들자.
 - 지금 150ms 후에 trigger-enter-active를 추가하게 했다. 근데 150ms 전에 hover off를 할 수도 있다. 이 경우 hover off 했는데 그 후에 trigger-enter-active가 추가될 수 있으니 filter를 걸자.
 - 오늘 내용은 많이 알찼다. 지금까지 html, css 작성할 때 약간 블럭을 쌓듯이 좀 딱딱하게 개발하는 면이 없지 않아 있었는데 js를 함께 쓰면서 좀 유연한 방식으로 작성을 해야겠다는 생각을 했다.
+
+# Day27. Click and Drag To Scroll
+
+- click한 위치에서 얼마만큼의 pixel을 움직였냐를 사용한다.
+- event에는 pageX라는 값이 있는데 이 값은 page의 x coordinate를 말한다. 근데 만약 해당 element가 margin이 있으면 해당 margin을 빼줘야지 상대적인 값을 얻을 수 있다.
+- element의 offsetLeft는 부모 요소에게서의 offset을 말한다.
+- scrollLeft, scrollTop, offsetX, offsetY, offsetTop, offsetLeft ... event에서 오는거랑 element에서 오는 것... 너무 많다. 헷갈린다. 정리하자.
