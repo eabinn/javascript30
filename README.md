@@ -233,3 +233,9 @@
 - event에는 pageX라는 값이 있는데 이 값은 page의 x coordinate를 말한다. 근데 만약 해당 element가 margin이 있으면 해당 margin을 빼줘야지 상대적인 값을 얻을 수 있다.
 - element의 offsetLeft는 부모 요소에게서의 offset을 말한다.
 - scrollLeft, scrollTop, offsetX, offsetY, offsetTop, offsetLeft ... event에서 오는거랑 element에서 오는 것... 너무 많다. 헷갈린다. 정리하자.
+
+# Day28. Video Speed Controller UI
+
+- this는 기본적으로 window다. element에 addEventListener로 event를 달 때에 proper function을 사용하면 해당 function 내에서 this를 찍으면 해당 element인 것을 알 수 있다. 하지만 화살표 함수로 callback fn을 등록하면 화살표 함수의 this는 상위 scope 이므로 해당 element가 this가 되지 않는다.
+- event의 pageY는 relative하게 바뀌므로(위에 element가 있는데 해당 element의 height가 유동적이라든가...) absolute한 값을 얻기 위해 event가 발생한 element의 offsetTop을 빼준다.
+- Number의 toFixed 메서드로 decimal point를 몇 자리로 할 지 정할 수 있다.
