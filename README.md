@@ -247,3 +247,10 @@
 - 아 ... name 속성을 이렇게 활요할 수 있었구나. 솔직히 name을 어떻게, 왜 써야 하는지는 잘 모르고 있었다. 약간 label과 input을 연결할 때 써야하는건가 했는데 name의 value로 직접 접근을 할 수 있었다. 예를 들어 customForm이라는 name이 달린 태그가 있다고 하면 document.customForm으로 바로 엘리먼트에 접근할 수 있다. 근데 주의할 점은 hierarchy를 생각하면서 해야한다.
 - 대박이다. 약간 지금까지 배웠던 것들 복기했다. data- 속성을 사용하는 것, this를 사용하는 것, proper function을 사용하는 이유, 그리고 name 속성으로 dom element에 접근하는 법 등 많이 복기를 할 수 있었다.
 - setInterval 할 대 변수에 저장해서 clearInterval해서 interval 취소해야 할 때 사용하자.
+
+# Day30. Whack A Mole Game
+
+- 같은 랜덤 값이 중복되는 것을 피하기 위해 마지막 hole을 저장하는 변수를 만들고 여따가 마지막 hole의 reference를 저장하자. reference를 저장한다는 것, 용어를 머릿속으로 항상 생각하자.
+- 만약 중복이 되면 다시 randomHole function을 실행하는데 return 함으로써 recursive를 피하자.
+- function에 return이 없거나 함수를 나갈 수 있는 그 어떤 것도 없을 때 함수를 재귀적으로 실행하면 끝까지 실행한다.
+- event의 isTursted로 실제로 event가 실제로 발생했는지를 확인한다.
