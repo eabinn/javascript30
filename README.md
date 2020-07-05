@@ -239,3 +239,11 @@
 - this는 기본적으로 window다. element에 addEventListener로 event를 달 때에 proper function을 사용하면 해당 function 내에서 this를 찍으면 해당 element인 것을 알 수 있다. 하지만 화살표 함수로 callback fn을 등록하면 화살표 함수의 this는 상위 scope 이므로 해당 element가 this가 되지 않는다.
 - event의 pageY는 relative하게 바뀌므로(위에 element가 있는데 해당 element의 height가 유동적이라든가...) absolute한 값을 얻기 위해 event가 발생한 element의 offsetTop을 빼준다.
 - Number의 toFixed 메서드로 decimal point를 몇 자리로 할 지 정할 수 있다.
+
+# Day29. Countdown Timer
+
+- Date에는 'new'에는 static method가 없기 때문에 그냥 Date.now()해서 현재 시간 가져온다.
+- setInterval은 바로 실행되지 않는다. term 후에 시작한다.
+- 아 ... name 속성을 이렇게 활요할 수 있었구나. 솔직히 name을 어떻게, 왜 써야 하는지는 잘 모르고 있었다. 약간 label과 input을 연결할 때 써야하는건가 했는데 name의 value로 직접 접근을 할 수 있었다. 예를 들어 customForm이라는 name이 달린 태그가 있다고 하면 document.customForm으로 바로 엘리먼트에 접근할 수 있다. 근데 주의할 점은 hierarchy를 생각하면서 해야한다.
+- 대박이다. 약간 지금까지 배웠던 것들 복기했다. data- 속성을 사용하는 것, this를 사용하는 것, proper function을 사용하는 이유, 그리고 name 속성으로 dom element에 접근하는 법 등 많이 복기를 할 수 있었다.
+- setInterval 할 대 변수에 저장해서 clearInterval해서 interval 취소해야 할 때 사용하자.
